@@ -1,70 +1,121 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--This is called embedded styling-->
         <style>
+            fieldset{
+                background-color: papayawhip;
+                border-radius: 8px;
+            }
+            input{
+                border-radius: 5px;
+                border: 1px sollid black;
+            }
             form fieldset{
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
-                max-width: 380px;
+                max-width: 380PX;
+                margin: 0 auto;
             }
-            formfieldset input{
+            form fieldset input{
+                float: right;
+                margin: 3px;
+            }
+            form fieldset input{
                 float: right;
                 margin: 5px;
-                margin-right: 5px ;
+                margin-right: 5%;
             }
-            button {
+            button{
                 margin: 20px;
                 max-width: 100px;
             }
         </style>
+
     </head>
+
     <body>
-        <h2>Black Goose Bistro | Pizza On-Demand</h2>
-        <p>
-            our 12" wood-tired pizza are available for devlivery. build your oun custom pizza and we will deliver it an hour.
-
-        </p>
+        <center>
+            <h2>Black goose Bistro | Pizza on-demand</h2>
+            <p style="max-width: 50%;">
+            Our 12 wood-fired pizza are available for delivery.
+            Build your own custom pizza and we will deliver it in an hour.
+            </p>
+        </center>
         
-          <form action="action_page.php">
+        <form action="action_page.php">
             <fieldset>
-                <legend>Your Information</legend>
-
-                <label for ="Name">Name:
-                    <input type ="text" name="name"/>
+                <legend> Your Information:</legend>
+                <label for="name"> Name:
+                    <input type="text" name="name"/>
                 </label>
-
-                <label for="address">Address:
-                    <input type="text" name="address"/>
+                <label for="Address"> Address:
+                    <input type="text" name="Address"/>
                 </label>
-
-                <label for="phone">Telephone:
+                <label for="phone"> Telephone:
                     <input type="text" name="phone"/>
                 </label>
-
-                <label for="email">Email:
-                    <input type="text" name="email"/>
-                    <button type="submit">Submit</button>
+                <label for="Email"> Email:
+                    <input type="Email" name="Email"/>
+                </label>
             </fieldset>
             <br/>
             <fieldset>
-            <legend>Delivery Insructions</legend>
-            <p>Limit character length. Max limit of 400 characters</p>
-            <textarea rows="5" cols="40"></textarea>
-        </fieldset>
+                <h4>Deivery Instructions: </h4>
+                <p>Limit Character length. Max limit of 400 Characters</p>
+                <textarea rows="5" cols="40"></textarea>
+            </fieldset>
+            <br/>
+            <fieldset>
+                <legend>Design your own pizza</legend>
+                <h4>Pizza Specification:</h4>
+                <h5>Crust (choose one)</h5>
+                <ul style="display: flex; flex-direction: column; max-width: 200px;">
+                    <li>Classic white<input type="radio" name="groupname" checked></li>
+                    <li>Multigrain<input type="radio" name="groupname" ></li>
+                    <li>Cheese-stuffed crust<input type="radio" name="groupname" ></li>
+                    <li>gluten-free<input type="radio" name="groupname" ></li>
+                </ul>
 
-        <fieldset>
-            <legend>Design Your own Dream Pizza</legend>
-            <h4>Pizza Specifications</h4>
+                </label>
+            </fieldset>   
+        <br/>
+            <fieldset>
+                <legend>Toppings</legend>
+                <h4>Choose as many as you want</h4>
+                <ul style="display: flex; flex-direction: column; max-width: 200px;">
+                    <li>White sauce<input type="radio" class="Toppings" checked></li>
+                    <li>Red sauce<input type="radio"  class="Toppings"></li>
+                    <li>Mozzarella cheese <input type="radio"  class="Toppings"></li>
+                    <li>Peproni<input type="radio"  class="Toppings"></li>
+                    <li>Mushrooms<input type="radio"  class="Toppings"></li>
+                    <li>Peppers<input type="radio"  class="Toppings"></li>
+                    <li>Anchovies<input type="radio"  class="Toppings"></li>
+                </ul>
 
-            <h5>Crust (choose one)</h5>
-            <ul style="display: flex;flex-direction:column;max-width:200px;">
-                <li>Classic white<input type="radio" checked></li>
-                <li>Multigrain<input type="radio"></li>
-                <li>Cheese-stuffed crust<input type="radio" ></li>
-                <li>Gulten-free<input type="radio"></li>
-            </ul>
-        </fieldset>
+                </label>
+            </fieldset> 
+            
+            <fieldset>
+                <legend>Additional Info</legend>
+                <label for="Number">Number of Pizzas:
+                    <input type="number" name="Number" max="10"/>
+                </label>
+            </fieldset>
+            <div id="button">
+                <button>submit></button>
+                <button>subscribe></button>
+                <button>reset></button>
+                
+            </div>
         </form>
-        </body>
+    </body>
+    <script>
+        const toppings = document.querySelectorAll(".Toppings");
+
+        toppings.forEach((topping) => {
+            topping.checked = false;
+            });
+    </script>
 </html>
